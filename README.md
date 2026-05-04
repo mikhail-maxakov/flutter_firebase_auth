@@ -1,16 +1,147 @@
-# flutter_firebase_auth
+```markdown
+# Flutter Firebase Authentication
 
-A new Flutter project.
+**Автор:** Максаков Михаил  
+**Дисциплина:** 3306.ФЛТ.26В Flutter  
+**Контрольная точка:** КТ №6 - Добавление авторизации и аутентификации
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Описание проекта
 
-A few resources to get you started if this is your first Flutter project:
+Учебное приложение для демонстрации реализации авторизации и аутентификации пользователей в Flutter с использованием Firebase Authentication.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Функциональность
+
+### Аутентификация
+- Регистрация нового пользователя (email + пароль)
+- Вход существующего пользователя
+- Выход из аккаунта
+- Валидация форм (проверка email, длина пароля)
+- Обработка ошибок Firebase
+
+### Интерфейс
+- Градиентный фон экрана входа/регистрации
+- Адаптивный дизайн
+- Интуитивно понятная навигация
+
+### Разграничение доступа
+- Публичный контент доступен всем пользователям
+- Эксклюзивный контент только для авторизованных
+- Автоматическое обновление UI при изменении статуса входа
+
+---
+
+## Технологии
+
+| Технология | Назначение |
+|------------|------------|
+| Flutter 3.19+ | Фреймворк |
+| Dart 3.0+ | Язык программирования |
+| Firebase Core | Интеграция Firebase |
+| Firebase Auth | Аутентификация |
+| Provider | Управление состоянием |
+
+---
+
+## Структура проекта
+
+```
+lib/
+├── main.dart                 # Точка входа, настройка Firebase
+├── models/
+│   └── app_user.dart         # Модель пользователя
+├── services/
+│   └── auth_service.dart     # Сервис Firebase Auth
+├── providers/
+│   └── auth_provider.dart    # Управление состоянием
+├── screens/
+│   ├── auth_screen.dart      # Экран входа/регистрации
+│   └── home_screen.dart      # Главный экран
+└── widgets/
+    └── restricted_widget.dart # Виджет ограничения доступа
+```
+
+---
+
+## Установка и запуск
+
+### 1. Клонирование репозитория
+
+```bash
+git clone https://github.com/mikhail-maxakov/flutter_firebase_auth.git
+cd flutter_firebase_auth
+```
+
+### 2. Установка зависимостей
+
+```bash
+flutter pub get
+```
+
+### 3. Настройка Firebase
+
+1. Создайте проект в Firebase Console
+2. Добавьте приложение (Android/iOS/Web)
+3. Скачайте файл конфигурации:
+   - Android: `google-services.json` в папку `android/app/`
+   - iOS: `GoogleService-Info.plist` в папку `ios/Runner/`
+   - Web: добавьте конфигурацию в `lib/main.dart`
+4. Включите Email/Password в разделе Authentication
+
+### 4. Запуск приложения
+
+```bash
+# Android / iOS
+flutter run
+
+# Web
+flutter run -d chrome
+
+# Windows
+flutter run -d windows
+```
+
+
+## Тестирование
+
+### Регистрация
+1. Нажмите "Нет аккаунта? Зарегистрироваться"
+2. Введите email (например, student@example.com)
+3. Введите пароль (минимум 6 символов)
+4. Нажмите "Зарегистрироваться"
+
+### Вход
+1. Введите зарегистрированный email и пароль
+2. Нажмите "Войти"
+3. Проверьте появление эксклюзивного контента
+
+### Выход
+1. Нажмите иконку выхода в правом верхнем углу
+2. Проверьте блокировку эксклюзивного контента
+
+---
+
+## Студентам для изучения
+
+### Ключевые концепции
+- Firebase Authentication — сервис для управления пользователями
+- Stream / StreamBuilder — реактивное отслеживание состояния
+- Provider — управление состоянием
+- Условный рендеринг для разграничения доступа
+
+### Дополнительные задания
+- Добавить подтверждение email
+- Реализовать сброс пароля
+- Добавить вход через Google
+- Сохранять данные пользователя в Firestore
+
+
+
+## Преподаватель
+
+**Максаков Михаил**  
+Курс: 3306.ФЛТ.26В Flutter  
+Контрольная точка: КТ №6
