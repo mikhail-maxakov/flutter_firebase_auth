@@ -1,4 +1,4 @@
-```markdown
+
 # Flutter Firebase Authentication
 
 **Автор:** Максаков Михаил  
